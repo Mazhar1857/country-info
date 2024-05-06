@@ -1,0 +1,117 @@
+.filter {
+    max-width: 200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5em;
+    position: absolute;
+
+}
+
+.filter-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 3.25em;
+    background-color: inherit;
+    padding-inline: 1.5em;
+    border-radius: 5px;
+}
+
+.filter-bar:hover {
+    cursor: pointer;
+}
+
+.filter-bar.light {
+    background-color: var(--bg-light);
+    color: var(--bg-light-text);
+    box-shadow: 0px 0px 15px var(--bg-light-shadow);
+}
+
+.filter-bar.dark {
+    background-color: var(--bg-blue-element);
+    box-shadow: 0px 0px 15px var(--bg-blue-shadow);
+    color: var(--bg-blue-text);
+}
+
+.filter-bar.hide>:last-child {
+    transform: rotate(-180deg);
+}
+
+.filter-bar>:last-child {
+    transform: rotate(0);
+    transition: transform 0.3s;
+}
+
+.filter-option {
+    padding: 1.5em 0;
+    display: grid;
+    grid-template-rows: 1fr;
+    transition: grid-template-rows 0.3s, padding 0.3s, inset 0.3s;
+    border-radius: 5px;
+
+    >div>*:not(:last-child) {
+        margin-bottom: 0.5em;
+    }
+
+    * {
+        overflow: hidden;
+    }
+}
+
+.filter-option li {
+    padding-inline: 1.5em;
+
+}
+
+.filter-option.dark li:hover {
+    cursor: pointer;
+    background-color: hsl(208, 23%, 32%);
+}
+
+.filter-option.light li:hover {
+    cursor: pointer;
+    background-color: hsl(0, 4%, 87%);
+}
+
+.filter-option.hide {
+    grid-template-rows: 0fr;
+    padding: 0;
+}
+
+
+.filter-option.light {
+    background-color: var(--bg-light);
+    color: var(--bg-light-text);
+    box-shadow: 0px 0px 15px var(--bg-light-shadow);
+}
+
+.filter-option.dark {
+    background-color: var(--bg-blue-element);
+    box-shadow: 0px 0px 15px var(--bg-blue-shadow);
+    color: var(--bg-blue-text);
+}
+
+@media (min-width:768px) {
+
+    .filter {
+        right: 0;
+    }
+
+
+}
+
+@media (min-width:441px) and (max-width:768px) {
+    .filter {
+        right: 0;
+    }
+}
+
+@media (max-width:440px) {
+
+    .filter {
+        left: 0;
+        font-size: 0.9em;
+    }
+
+}

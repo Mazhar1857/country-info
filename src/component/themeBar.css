@@ -1,0 +1,73 @@
+.theme-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.theme-bar.light {
+    background-color: var(--bg-light-element);
+    color: var(--bg-light-text);
+    box-shadow: 0px 0px 15px var(--bg-light-shadow);
+}
+
+.theme-bar.dark {
+    background-color: var(--bg-blue-element);
+    color: var(--bg-blue-text);
+    box-shadow: 0px 0px 15px var(--bg-blue-shadow);
+}
+
+
+
+
+.moon-icon {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8em;
+
+    >figure {
+        margin-top: 3px;
+    }
+}
+
+
+
+@media (min-width:768px) {
+
+    .theme-bar {
+        padding: 1.4em 55px;
+
+        h1 {
+            font-size: 2em;
+        }
+    }
+
+    .moon-icon:hover {
+        cursor: pointer;
+    }
+
+}
+
+@media (min-width:441px) and (max-width:768px) {
+    .theme-bar {
+        padding: 1.4em 39px;
+
+        h1 {
+            font-size: 1.5em;
+        }
+    }
+}
+
+@media (max-width:440px) {
+    .theme-bar {
+        padding: 1.4em 20px;
+
+        h1 {
+            font-size: 1em;
+        }
+    }
+
+    .moon-icon>div {
+        font-size: 0.9em;
+    }
+}
